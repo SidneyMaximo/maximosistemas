@@ -24,9 +24,31 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'MaximoSistemas — Desenvolvimento Digital',
-  description: 'A MaximoSistemas cria sites, sistemas e produtos digitais sob medida para empresas e profissionais.',
-  keywords: ['desenvolvedor full-stack', 'desenvolvimento web', 'React', 'Next.js', 'portfólio'],
+  title: 'Criação de Sites para Pequenos Negócios | MaximoSistemas',
+  description: 'Criamos sites profissionais para lanchonetes, barbearias, salões e pequenos negócios. Facilite o contato com seus clientes e fortaleça sua presença online.',
+  keywords: [
+    'criação de sites para pequenos negócios',
+    'site para lanchonete',
+    'site para barbearia',
+    'site profissional para empresa local',
+    'criação de sistemas web',
+    'MaximoSistemas',
+    'cardápio online',
+    'site para salão de beleza'
+  ],
+  openGraph: {
+    title: 'Criação de Sites para Pequenos Negócios | MaximoSistemas',
+    description: 'Criamos sites profissionais para lanchonetes, barbearias, salões e pequenos negócios. Facilite o contato com seus clientes e fortaleça sua presença online.',
+    url: 'https://maximosistemas.com',
+    siteName: 'MaximoSistemas',
+    locale: 'pt_BR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Criação de Sites para Pequenos Negócios | MaximoSistemas',
+    description: 'Criamos sites profissionais para lanchonetes, barbearias, salões e pequenos negócios. Facilite o contato com seus clientes e fortaleça sua presença online.',
+  },
   icons: {
     icon: [
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
