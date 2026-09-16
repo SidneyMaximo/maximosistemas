@@ -24,21 +24,24 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Criação de Sites para Pequenos Negócios | MaximoSistemas',
-  description: 'Criamos sites profissionais para lanchonetes, barbearias, salões e pequenos negócios. Facilite o contato com seus clientes e fortaleça sua presença online.',
+  title: 'Criação de Sites e Sistemas Web Profissionais | MaximoSistemas',
+  description: 'Criamos sites profissionais e sistemas sob medida para empresas e prestadores de serviços. Facilite o contato com seus clientes e fortaleça sua presença online.',
   keywords: [
     'criação de sites para pequenos negócios',
+    'criação de sites profissionais',
+    'desenvolvimento de sistemas web',
     'site para lanchonete',
     'site para barbearia',
     'site profissional para empresa local',
+    'site profissional para empresas',
     'criação de sistemas web',
     'MaximoSistemas',
     'cardápio online',
     'site para salão de beleza'
   ],
   openGraph: {
-    title: 'Criação de Sites para Pequenos Negócios | MaximoSistemas',
-    description: 'Criamos sites profissionais para lanchonetes, barbearias, salões e pequenos negócios. Facilite o contato com seus clientes e fortaleça sua presença online.',
+    title: 'Criação de Sites e Sistemas Web Profissionais | MaximoSistemas',
+    description: 'Criamos sites profissionais e sistemas sob medida para empresas e prestadores de serviços. Facilite o contato com seus clientes e fortaleça sua presença online.',
     url: 'https://maximosistemas.com',
     siteName: 'MaximoSistemas',
     locale: 'pt_BR',
@@ -46,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Criação de Sites para Pequenos Negócios | MaximoSistemas',
-    description: 'Criamos sites profissionais para lanchonetes, barbearias, salões e pequenos negócios. Facilite o contato com seus clientes e fortaleça sua presença online.',
+    title: 'Criação de Sites e Sistemas Web Profissionais | MaximoSistemas',
+    description: 'Criamos sites profissionais e sistemas sob medida para empresas e prestadores de serviços. Facilite o contato com seus clientes e fortaleça sua presença online.',
   },
   icons: {
     icon: [

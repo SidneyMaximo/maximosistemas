@@ -25,6 +25,10 @@ import {
 } from "lucide-react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { AgentParticleCanvas } from "@/components/landing/agent-particle-canvas";
+import AboutSection from "@/components/landing/about-section";
+import Testimonials from "@/components/landing/testimonials";
+import ContinuousServices from "@/components/landing/continuous-services";
+import FAQSection from "@/components/landing/faq-section";
 
 const navItems = [
   ["Início", "#inicio"],
@@ -58,7 +62,7 @@ const targetAudiences = [
   },
   {
     icon: Store,
-    title: "Pequenos negócios & Serviços",
+    title: "Empresas & Negócios Locais",
     description:
       "Uma página profissional para explicar o que você faz, passar credibilidade e transformar visitas em oportunidades.",
     badge: "PRESENÇA DIGITAL",
@@ -101,6 +105,7 @@ const solutions = [
       "Uma página completa com apresentação do seu negócio, serviços, fotos, localização, horários e botão de contato.",
     idealFor: "Ideal para empresas locais, profissionais autônomos e prestadores de serviços.",
     formGoal: "apresentar minha empresa",
+    priceLabel: "A partir de R$ 800",
   },
   {
     number: "02",
@@ -109,6 +114,7 @@ const solutions = [
       "Organize seus produtos ou serviços com fotos, preços e categorias, facilitando o atendimento e pedidos pelo WhatsApp.",
     idealFor: "Ideal para lanchonetes, restaurantes, confeitarias e comércios locais.",
     formGoal: "criar cardápio ou catálogo",
+    priceLabel: "A partir de R$ 1.500",
   },
   {
     number: "03",
@@ -117,6 +123,7 @@ const solutions = [
       "Quando seu negócio precisa de uma ferramenta específica para organizar agendamentos, clientes ou rotinas diárias.",
     idealFor: "Ideal para negócios que querem automatizar processos e ganhar tempo.",
     formGoal: "criar um sistema personalizado",
+    priceLabel: "Orçamento sob consulta",
   },
 ];
 
@@ -157,6 +164,14 @@ const realProjects = [
     description:
       "Plataforma digital completa para centro médico e clínica de cirurgia plástica com interface moderna, agendamento facilitado e navegação focada em conversão.",
     href: "https://clinica-dr-diogo.vercel.app/",
+    badge: "PROJETO REAL NO AR",
+  },
+  {
+    name: "OBPC RIOLARGO",
+    type: "Site Institucional & Comunicação",
+    description:
+      "Presença digital com identidade institucional, foco em comunicação pública, página de apresentação e navegação direta para o público conhecer a marca e seus serviços.",
+    href: "https://obpcriolargo.com.br/",
     badge: "PROJETO REAL NO AR",
   },
 ];
@@ -285,7 +300,7 @@ export function PortfolioPage() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
         {/* Top announcement bar */}
         <div className="mx-auto flex h-7 sm:h-8 max-w-7xl items-center justify-between border-b border-border px-4 sm:px-6 font-mono text-[9px] sm:text-[10px] tracking-[0.14em] sm:tracking-[0.18em] text-muted-foreground md:px-10">
-          <span className="truncate">MAXIMOSISTEMAS / SITES PARA PEQUENOS NEGÓCIOS</span>
+          <span className="truncate">MAXIMOSISTEMAS / SITES & SISTEMAS PROFISSIONAIS</span>
           <span className="flex items-center gap-1.5 shrink-0">
             <b className="text-green text-[8px] sm:text-[10px]">●</b>
             <span className="hidden xs:inline sm:inline">DISPONÍVEL PARA NOVOS CLIENTES</span>
@@ -427,11 +442,11 @@ export function PortfolioPage() {
         <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 sm:gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="sys-tag mb-4 sm:mb-6 text-[10px] sm:text-xs">
-              SITES & SISTEMAS PARA PEQUENOS NEGÓCIOS
+              SITES & SISTEMAS PROFISSIONAIS
             </p>
             <h1 className="max-w-3xl font-display text-4xl sm:text-6xl md:text-7xl lg:text-[clamp(3.2rem,6.2vw,5.6rem)] leading-[0.95] sm:leading-[0.90] tracking-[-0.02em]">
               SITES QUE AJUDAM<br />
-              PEQUENOS NEGÓCIOS A<br />
+              SEU NEGÓCIO A<br />
               <span className="text-primary">CONSEGUIR MAIS CLIENTES.</span>
             </h1>
             <p className="mt-5 sm:mt-8 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
@@ -550,6 +565,9 @@ export function PortfolioPage() {
           </div>
         </div>
       </section>
+
+      {/* ── QUEM SOMOS ─────────────────────────────────── */}
+      <AboutSection />
 
       {/* ── 3. IDENTIFICAÇÃO DO PÚBLICO (4 NICHOS) ────────── */}
       <section className="border-b border-border px-4 sm:px-6 md:px-10 py-16 sm:py-24">
@@ -696,6 +714,11 @@ export function PortfolioPage() {
                     <p className="font-mono text-[10px] text-muted-foreground">
                       💡 {sol.idealFor}
                     </p>
+                    <div className="mt-3 inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3 py-1.5">
+                      <span className="font-mono text-[10px] font-semibold text-primary tracking-wider">
+                        💰 {sol.priceLabel}
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <button
@@ -746,8 +769,15 @@ export function PortfolioPage() {
                   </div>
 
                   {/* Simulated Visual Canvas */}
-                  <div className="relative mb-5 flex h-44 sm:h-48 items-center justify-center overflow-hidden border border-border bg-background p-4 text-center">
-                    <div className="space-y-2">
+                  <div className="relative mb-5 flex h-44 sm:h-48 items-center justify-center overflow-hidden border border-border bg-background p-0 text-center">
+                    <Image
+                      src={demo.id === "lanchonete" ? "/images/demos/lanchonete.svg" : demo.id === "barbearia" ? "/images/demos/barbearia.svg" : "/images/demos/salao.svg"}
+                      alt={demo.name}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/35" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center space-y-2 z-10">
                       <div className="size-10 mx-auto rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
                         {demo.id === "lanchonete" ? (
                           <Utensils className="size-5" />
@@ -792,6 +822,9 @@ export function PortfolioPage() {
               </article>
             ))}
           </div>
+
+          {/* ── Depoimentos ────────────────────────────────────── */}
+          <Testimonials />
 
           {/* ── Subseção de Projetos Reais ────────────────────── */}
           <div className="mt-16 pt-12 border-t border-border">
@@ -918,6 +951,12 @@ export function PortfolioPage() {
           </div>
         </div>
       </section>
+
+      {/* ── SERVIÇOS CONTÍNUOS ──────────────────────────── */}
+      <ContinuousServices />
+
+      {/* ── FAQ ─────────────────────────────────────────── */}
+      <FAQSection />
 
       {/* ── 9. CHAMADA FINAL PARA AÇÃO (CTA) ───────────────── */}
       <section className="border-b border-border px-4 sm:px-6 md:px-10 py-16 sm:py-20 bg-card/40">
@@ -1152,7 +1191,7 @@ export function PortfolioPage() {
                 className="h-full w-full object-contain"
               />
             </div>
-            <span className="truncate">© 2026 MAXIMOSISTEMAS — SITES PARA PEQUENOS NEGÓCIOS</span>
+            <span className="truncate">© 2026 MAXIMOSISTEMAS — SITES & SISTEMAS PROFISSIONAIS</span>
           </div>
           <span>SITES PROFISSIONAIS, CARDÁPIOS E SISTEMAS SOB MEDIDA.</span>
         </div>
